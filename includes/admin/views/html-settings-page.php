@@ -5,11 +5,8 @@
  *
  * This file is used to markup the admin-facing aspects of the plugin.
  *
- * @link       http://www.wpgens.com
  * @since      1.0.0
  *
- * @package    Fav_Gens
- * @subpackage Fav_Gens/admin/partials
  */
 
 ?>

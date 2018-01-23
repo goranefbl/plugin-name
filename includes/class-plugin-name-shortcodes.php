@@ -40,7 +40,7 @@ class Plugin_Name_Shortcodes
 
         $guest_text  = $atts['guest_text'];
 
-        $template_path  = WPGens_RAF::get_template_path('advance-shortcode.php','');
+        $template_path  = Plugin_Name::get_template_path('advance-shortcode.php','');
 
         if (!is_readable($template_path)) {
             return sprintf('<!-- Could not read "%s" file -->', $template_path);

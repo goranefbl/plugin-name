@@ -181,7 +181,7 @@ if ( !class_exists( 'Plugin_Name' ) ) :
 
 
 	    /**
-	     * Get the path of PHP template for WPGens RAF Views
+	     * Get the path of PHP template
 	     *
 	     * @since  1.0
 	     * @return string
@@ -189,7 +189,7 @@ if ( !class_exists( 'Plugin_Name' ) ) :
 	    public static function get_template_path($template_name, $template_path = '') 
 	    {
 	    	// Default Template Path
-	    	$default_path = WPGENS_RAF_ABSPATH. 'templates' .trailingslashit($template_path);
+	    	$default_path = PLUGIN_NAME_ABSPATH. 'templates' .trailingslashit($template_path);
 
 			// Look within passed path within the theme - this is priority.
 			$template = locate_template(

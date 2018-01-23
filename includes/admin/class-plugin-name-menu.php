@@ -1,7 +1,6 @@
 <?php
 /**
  * Setup Menu Pages
- * @author    WPGens
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -44,19 +43,7 @@ class Plugin_Name_Menu {
 
 		include( PLUGIN_NAME_ABSPATH . 'includes/admin/views/html-some-admin-page.php' );
 	}
-
-
-	/**
-	 * Temporary Settings page untill we finish separate page.
-	 *
-	 * @since 2.0.0
-	 */
-//	public function settings_page( $settings ) {
-//		$settings[] = require_once( PLUGIN_NAME_ABSPATH . 'includes/admin/class-wpgens-raf-settings.php' );
-//		return $settings;
-//	}
-
-
+	
 
     /**
      * Load settings page content
@@ -153,7 +140,7 @@ class Plugin_Name_Menu {
 	 */
 	function docs_link( $links ) {
 		$mylinks = array(
-			'<a target="_blank" href="http://wpgens.helpscoutdocs.com">Docs</a>',
+			'<a target="_blank" href="http://www.helpscoutdocs.com">Docs</a>',
 		);
 		return array_merge( $links, $mylinks );
 	}
