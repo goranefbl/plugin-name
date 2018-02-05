@@ -72,6 +72,6 @@ class Plugin_Name_Post_Type {
 
 }
 
-new Plugin_Name_Post_Type();
-
 endif;
+
+new Plugin_Name_Post_Type();

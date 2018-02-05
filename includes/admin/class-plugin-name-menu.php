@@ -18,7 +18,6 @@ class Plugin_Name_Menu {
 		add_filter( 'woocommerce_get_settings_pages', array( $this, 'settings_page') );
 		// Add links under plugin page.
 		add_filter( 'plugin_action_links_' . PLUGIN_BASENAME , array( $this, 'add_settings_link' ) );
-		add_filter( 'plugin_action_links_' . PLUGIN_BASENAME , array( $this, 'docs_link') );
 		
 	}
 
@@ -56,7 +55,6 @@ class Plugin_Name_Menu {
 
         // Build page HTML
         $html = '<div class="wrap" id="' . 'plugin_name_settings">' . "\n";
-            $html .= '<h2>' . __( 'Plugin Settings' , 'wordpress-plugin-template' ) . '</h2>' . "\n";
 
             $tab = '';
             if ( isset( $_GET['tab'] ) && $_GET['tab'] ) {
@@ -66,7 +64,7 @@ class Plugin_Name_Menu {
             // Show page tabs
             if ( is_array( $this->settings ) && 1 < count( $this->settings ) ) {
 
-                $html .= '<h2 class="nav-tab-wrapper" style="padding:0;">' . "\n";
+                $html .= '<h5 class="nav-tab-wrapper" style="padding:0;">' . "\n";
 
                 $c = 0;
                 foreach ( $this->settings as $section => $data ) {
@@ -95,7 +93,7 @@ class Plugin_Name_Menu {
                     ++$c;
                 }
 
-                $html .= '</h2>' . "\n";
+                $html .= '</h5>' . "\n";
             }
 
             $html .= '<form method="post" action="options.php" enctype="multipart/form-data">' . "\n";
@@ -115,10 +113,7 @@ class Plugin_Name_Menu {
 
         include( PLUGIN_NAME_ABSPATH . 'includes/admin/views/html-settings-page.php' );
     }
-
-
-
-
+    
 
 	/**
 	 * Plugin Settings Link on plugin page
@@ -128,19 +123,6 @@ class Plugin_Name_Menu {
 	function add_settings_link( $links ) {
 		$mylinks = array(
 			'<a href="' . admin_url( 'admin.php?page=wc-settings&tab=gens_raf' ) . '">Settings</a>',
-		);
-		return array_merge( $links, $mylinks );
-	}
-
-
-	/**
-	 * Plugin Documentation Link on plugin page
-	 *
-	 * @since 		2.0.0
-	 */
-	function docs_link( $links ) {
-		$mylinks = array(
-			'<a target="_blank" href="http://www.helpscoutdocs.com">Docs</a>',
 		);
 		return array_merge( $links, $mylinks );
 	}

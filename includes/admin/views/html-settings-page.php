@@ -27,7 +27,7 @@
                     <div class="postbox ">
                         <h3 class="hndle"><span><?php _e('Sidebar stuff','gens-raf'); ?></span></h3>
                         <div class="inside">
-                            <p> More text goes here. </p>
+                            <p> Some text can go here. </p>
                         </div>
                     </div>
                 </div>
