@@ -356,7 +356,24 @@ class Plugin_Name_Settings {
                 </div>
                 <?php
             break;
-            
+            case 'repeater':
+                if($data) {
+                    foreach ($data as $key => $value) {
+                        $html .= '<div class="am2_repeating_section">';
+                        $html .= '<input type="text" style="width:100%" name="' . esc_attr( $option_name ) . '['.$key.'][name]" placeholder="Name" value="'.$value['name'].'" />';
+                        $html .= '<input type="text" style="width:100%" name="' . esc_attr( $option_name ) . '['.$key.'][url]" placeholder="URL" value="'.$value['url'].'" />';
+                        $html .= '<a href="#" class="delete">Remove</a>';
+                        $html .= '</div>';
+                    }
+                } else {
+                    $html .= '<div class="am2_repeating_section">';
+                    $html .= '<input type="text" style="width:100%" name="' . esc_attr( $option_name ) . '[0][name]" placeholder="Name" value="" />';
+                    $html .= '<input type="text" style="width:100%" name="' . esc_attr( $option_name ) . '[0][url]" placeholder="URL" value="" />';
+                    $html .= '<a href="#" class="delete">Remove</a>';
+                    $html .= '</div>';
+                }
+                $html .= '<a href="#" class="am2_add_getter button button-small">Add new Cookie</a>';
+            break;
             case 'editor':
                 wp_editor($data, $option_name, array(
                     'textarea_name' => $option_name

@@ -21,6 +21,29 @@
         <div id="post-body" class="metabox-holder columns-2">
             <div id="postbox-container-2" class="postbox-container">
                 <?php echo $html; ?>
+                <script type="text/javascript">
+                    jQuery(document).ready(function($){
+                        // Add a new repeating section
+                        $('.am2_add_getter').on('click',function(){
+                            var lastRepeatingGroup = $('.am2_repeating_section').last();
+                            var cloned = lastRepeatingGroup.clone();
+                            cloned.find("input").val("");
+                            cloned.find("input").each(function(input){
+                                $name = $(this).attr("name");
+                                newId = $name.replace(/[0-9]+(?!.*[0-9])/, function(match) {  return parseInt(match, 10)+1; } );
+                                $(this).attr("name",newId);
+                            });
+                            
+                            cloned.insertAfter($('.am2_repeating_section').last());
+                            return false;
+                        });
+                        // Delete a repeating section
+                        $('.am2_repeating_section').on('click','.delete',function(){
+                            $(this).closest('.am2_repeating_section').remove();
+                            return false;
+                        });
+                    });
+                </script>
             </div>
             <div id="postbox-container-1" class="postbox-container" style="margin-top:40px;">
                 <div id="priority_side-sortables" class="meta-box-sortables ui-sortable">
