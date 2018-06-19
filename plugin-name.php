@@ -150,8 +150,7 @@ if ( !class_exists( 'Plugin_Name' ) ) :
 		{
 			register_activation_hook( __FILE__, array( 'Plugin_Name_Activator', 'activate' ) );
 			add_action( 'init', array( $this, 'init' ), 0 );
-           //  add_action( 'init', array( 'Plugin_Name_Shortcodes', 'init' ) ); // shortcodes and template path example
-            Plugin_Name_Shortcodes::init();
+            add_action( 'init', array( 'Plugin_Name\Includes\Plugin_Name_Shortcodes', 'init' ) ); // shortcodes and template path example
 		}
 
 		/**
