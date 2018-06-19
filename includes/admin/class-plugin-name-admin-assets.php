@@ -1,14 +1,14 @@
 <?php
+
+namespace Plugin_Name\Includes\Admin;
+
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 /**
  * Handle frontend scripts
  *
  * @since     2.0.0
  */
-
-if ( ! defined( 'ABSPATH' ) ) {
-    exit;
-}
-
 class Plugin_Name_Admin_Assets {
 
     /**

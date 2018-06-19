@@ -5,9 +5,9 @@
  * @since     2.0.0
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-    exit;
-}
+namespace Plugin_Name\Includes;
+
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 class Plugin_Name_Assets {
 

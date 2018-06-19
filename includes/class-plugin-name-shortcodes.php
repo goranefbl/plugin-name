@@ -1,15 +1,14 @@
 <?php
 
+namespace Plugin_Name\Includes;
+
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 /**
  * Example Class for using Shortodes
  *
  * @since 1.0.0
  */
-
-if ( ! defined( 'ABSPATH' ) ) {
-    exit;
-}
-
 class Plugin_Name_Shortcodes
 {
 

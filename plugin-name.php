@@ -10,11 +10,10 @@
  * Domain Path: /languages
  */
 
+namespace Plugin_Name;
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
-}
-
+use Plugin_Name\Includes\Admin\Plugin_Name_Activator;
+use Plugin_Name\Includes\Plugin_Name_Shortcodes;
 
 if ( !class_exists( 'Plugin_Name' ) ) :
 
@@ -73,8 +72,8 @@ if ( !class_exists( 'Plugin_Name' ) ) :
 		{
 			$this->define( 'PLUGIN_NAME_URL', plugin_dir_url( __FILE__ ) );
 			$this->define( 'PLUGIN_NAME_ABSPATH', dirname( __FILE__ ) . '/' );
-			$this->define( 'PLUGIN_NAME_VERSION', $this->get_version() );
-			$this->define( 'PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
+            $this->define( 'PLUGIN_NAME_VERSION', $this->get_version() );
+            $this->define( 'PLUGIN_NAME_BASE', plugin_basename(__FILE__) );
 		}
 
 		/**
@@ -126,10 +125,10 @@ if ( !class_exists( 'Plugin_Name' ) ) :
 		 */
 		public function includes()
 		{
-			include_once( PLUGIN_NAME_ABSPATH . 'includes/class-plugin-name-cpt.php' );			
-			include_once( PLUGIN_NAME_ABSPATH . 'includes/class-plugin-name-shortcodes.php' );
+            require_once( PLUGIN_NAME_ABSPATH . 'autoload.php' );
+			include_once( PLUGIN_NAME_ABSPATH . 'includes/class-plugin-name-post-type.php' );
 
-			// Admin Classes
+			// Admin Classes that are no
 			if ( $this->is_request( 'admin' ) ) {
 				include_once( PLUGIN_NAME_ABSPATH . 'includes/admin/class-plugin-name-activator.php' );
 				include_once( PLUGIN_NAME_ABSPATH . 'includes/admin/class-plugin-name-admin-assets.php' );
@@ -151,7 +150,8 @@ if ( !class_exists( 'Plugin_Name' ) ) :
 		{
 			register_activation_hook( __FILE__, array( 'Plugin_Name_Activator', 'activate' ) );
 			add_action( 'init', array( $this, 'init' ), 0 );
- 			add_action( 'init', array( 'Plugin_Name_Shortcodes', 'init' ) ); // shortcodes and template path example
+           //  add_action( 'init', array( 'Plugin_Name_Shortcodes', 'init' ) ); // shortcodes and template path example
+            Plugin_Name_Shortcodes::init();
 		}
 
 		/**

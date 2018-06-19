@@ -1,12 +1,11 @@
 <?php
+namespace Plugin_Name\Includes\Admin;
+
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 /**
  * Setup Menu Pages
  */
-
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
-
 class Plugin_Name_Menu {
 
 	private $settings;
@@ -17,7 +16,7 @@ class Plugin_Name_Menu {
 		// TODO: Temporary settings screen
 		add_filter( 'woocommerce_get_settings_pages', array( $this, 'settings_page') );
 		// Add links under plugin page.
-		add_filter( 'plugin_action_links_' . PLUGIN_BASENAME , array( $this, 'add_settings_link' ) );
+		add_filter( 'plugin_action_links_' . PLUGIN_NAME_BASE , array( $this, 'add_settings_link' ) );
 		
 	}
 

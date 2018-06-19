@@ -5,9 +5,9 @@
  * @since       1.0.0
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+namespace Plugin_Name\Includes;
 
-if ( ! class_exists( 'Plugin_Name_Post_Type' ) ) :
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 class Plugin_Name_Post_Type {
 
@@ -71,7 +71,5 @@ class Plugin_Name_Post_Type {
     }
 
 }
-
-endif;
 
 new Plugin_Name_Post_Type();

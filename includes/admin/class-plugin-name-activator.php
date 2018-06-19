@@ -1,5 +1,9 @@
 <?php
 
+namespace Plugin_Name\Includes\Admin;
+
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 /**
  * Fired during plugin activation.
  *
@@ -10,10 +14,6 @@
  * @subpackage Plugin_Name/includes
  * @author     Your Name <email@example.com>
  */
-
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
 
 class Plugin_Name_Activator {
 
