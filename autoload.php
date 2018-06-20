@@ -11,7 +11,6 @@ spl_autoload_register( function ( $class ) {
 		// no, move to the next registered autoloader
 		return;
     }
-    
 	// replace all underscores with hyphen
 	$relative_class = str_replace( '_', '-', $class );
 	// prepend class name with class-
@@ -20,7 +19,6 @@ spl_autoload_register( function ( $class ) {
 	// separators with directory separators in the relative class name, append
 	// with .php
 	$file = $base_dir.'/' . str_replace( '\\', '/', $relative_class ) . '.php';
-    //wp_die($file);
 	// if the file exists, require it
 	if ( file_exists( $file ) ) {
 		require $file;

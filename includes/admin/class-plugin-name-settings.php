@@ -1,4 +1,5 @@
 <?php
+
 namespace Plugin_Name\Includes\Admin;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly

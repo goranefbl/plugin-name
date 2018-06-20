@@ -59,7 +59,6 @@ if ( !class_exists( 'Plugin_Name' ) ) :
 		public function __construct()
 		{
 			$this->define_constants();
-			// $this->auto_load();
 			$this->includes();
 			$this->init_hooks();
 		}
@@ -121,7 +120,6 @@ if ( !class_exists( 'Plugin_Name' ) ) :
 		/**
 		 * Include required core files used in admin and on the frontend. 
 		 * @since  1.0
-		 * @Ttodo Should switch to Autoloader
 		 */
 		public function includes()
 		{
@@ -130,7 +128,6 @@ if ( !class_exists( 'Plugin_Name' ) ) :
 
 			// Admin Classes that are no
 			if ( $this->is_request( 'admin' ) ) {
-				include_once( PLUGIN_NAME_ABSPATH . 'includes/admin/class-plugin-name-activator.php' );
 				include_once( PLUGIN_NAME_ABSPATH . 'includes/admin/class-plugin-name-admin-assets.php' );
 				include_once( PLUGIN_NAME_ABSPATH . 'includes/admin/class-plugin-name-settings.php' );
 				include_once( PLUGIN_NAME_ABSPATH . 'includes/admin/class-plugin-name-menu.php' );
@@ -148,7 +145,7 @@ if ( !class_exists( 'Plugin_Name' ) ) :
 		 */
 		private function init_hooks()
 		{
-			register_activation_hook( __FILE__, array( 'Plugin_Name_Activator', 'activate' ) );
+			register_activation_hook( __FILE__, array( 'Plugin_Name\Includes\Admin\Plugin_Name_Activator', 'activate' ) );
 			add_action( 'init', array( $this, 'init' ), 0 );
             add_action( 'init', array( 'Plugin_Name\Includes\Plugin_Name_Shortcodes', 'init' ) ); // shortcodes and template path example
 		}

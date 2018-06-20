@@ -1,4 +1,5 @@
 <?php
+
 namespace Plugin_Name\Includes\Admin;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -13,10 +14,10 @@ class Plugin_Name_Menu {
 	public function __construct() {
 		// Add submenu items
 		add_action( 'admin_menu', array( $this, 'add_menu_item') );
-		// TODO: Temporary settings screen
-		add_filter( 'woocommerce_get_settings_pages', array( $this, 'settings_page') );
 		// Add links under plugin page.
 		add_filter( 'plugin_action_links_' . PLUGIN_NAME_BASE , array( $this, 'add_settings_link' ) );
+		// TODO: Temporary settings screen
+		add_filter( 'woocommerce_get_settings_pages', array( $this, 'settings_page') );
 		
 	}
 
