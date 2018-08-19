@@ -1,10 +1,10 @@
 <?php
 /**
- * Plugin Name: Plugin Name
+ * Plugin Name: Your Plugin Name
  * Plugin URI: https://pluginlink.com
- * Description: Plugin description
+ * Description: Your Plugin Description
  * Version: 1.0.0
- * Author: Plugin Author
+ * Author: Your Plugin Author
  * Author URI: https://authorurl.com
  * Text Domain: plugin-name
  * Domain Path: /languages
