@@ -9,6 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  *
  * @since 1.0.0
  */
+use Plugin_Name\Plugin_Name;
 class Plugin_Name_Shortcodes
 {
 
@@ -39,7 +40,7 @@ class Plugin_Name_Shortcodes
 
         $guest_text  = $atts['guest_text'];
 
-        $template_path  = Plugin_Name::get_template_path('advance-shortcode.php','');
+        $template_path  = Plugin_Name::get_template_path('advanced-shortcode.php','');
 
         if (!is_readable($template_path)) {
             return sprintf('<!-- Could not read "%s" file -->', $template_path);
